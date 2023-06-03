@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  strapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: strapi-stripe-nextjs
+    volumes:
+      - ./app:/app:rw
+    ports:
+      - "1337:1337"      
+    networks: 
+      - internal            
+
+networks:
+  internal:
+    driver: bridge      
